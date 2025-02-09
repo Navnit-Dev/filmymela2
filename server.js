@@ -26,7 +26,8 @@ const movieSchema = new mongoose.Schema({
     downloadLinks: {
         type: Map,
         of: String
-    }
+    },
+    watch:String
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
