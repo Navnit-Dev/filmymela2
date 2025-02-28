@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const movie = require('./routes/movies')
 const admin = require('./routes/admin')
 const adminLogin = require('./routes/auth')
-const User = require('./routes/UserRoutes')
+const Users = require('./routes/UserRoutes')
 const Watchlist = require('./routes/WatchList')
 const GetMovies = require('./routes/GetMovie')
 const cors = require('cors');
@@ -27,7 +27,7 @@ app.use('/api',GetMovies);
 app.use('/api',movie);
 app.use('/api/auth',admin);
 app.use('/api/auth',adminLogin);
-app.use('/api/auth',User);
+app.use('/api/auth',Users);
 
 // Start server
 const PORT = process.env.PORT || 8001;

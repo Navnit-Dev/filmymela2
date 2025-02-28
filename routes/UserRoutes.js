@@ -67,4 +67,21 @@ router.post("/signin", async (req, res) => {
     }
 });
 
+router.get('/user/:id', async (req,res) => {
+    try {
+        const id = req.params.id;
+        if(!id){
+            res.json({msg:"All Fields Requires"})
+        }
+
+        const user = await User.findById(id)
+        if(!user){
+            res.status(400).send("User Does Not Exists.")
+        }
+        res.status(200).json(user)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router;
